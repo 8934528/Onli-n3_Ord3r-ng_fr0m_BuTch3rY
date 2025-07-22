@@ -1,0 +1,266 @@
+﻿/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+    line-height: 1.6;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* Color Scheme */
+:root {
+    --primary-brown: #8B4513;
+    --dark-brown: #5D2906;
+    --light-brown: #A0522D;
+    --primary-red: #A52A2A;
+    --dark-red: #800000;
+    --light-red: #CD5C5C;
+    --light-grey: #F0F0F0;
+    --medium-grey: #D3D3D3;
+    --dark-grey: #A9A9A9;
+}
+
+/* Login Container */
+.login-container {
+    display: flex;
+    height: 100vh;
+    position: relative;
+}
+
+.login-background {
+    flex: 1;
+    background: url('https://images.unsplash.com/photo-1606787366850-de6330128bfc?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center;
+    background-size: cover;
+    filter: brightness(0.6);
+    position: relative;
+}
+
+.login-form {
+    width: 100%;
+    max-width: 450px;
+    background-color: white;
+    padding: 3rem 2.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    box-shadow: -5px 0 25px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+}
+
+.logo-container {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.logo-text {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    color: var(--primary-brown);
+    margin-bottom: 0.2rem;
+}
+
+.logo-subtext {
+    font-size: 0.9rem;
+    color: var(--dark-grey);
+}
+
+.form-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+    color: var(--dark-brown);
+    text-align: center;
+}
+
+.form-subtitle {
+    color: var(--dark-grey);
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+/* Form Elements */
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.input-group {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+    .input-group i {
+        position: absolute;
+        left: 1rem;
+        color: var(--dark-grey);
+    }
+
+.form-input {
+    width: 100%;
+    padding: 0.8rem 1rem 0.8rem 2.5rem;
+    border: 1px solid var(--medium-grey);
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+    .form-input:focus {
+        outline: none;
+        border-color: var(--primary-brown);
+        box-shadow: 0 0 0 3px rgba(139, 69, 19, 0.1);
+    }
+
+/* Form Options */
+.form-options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.remember-me {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    font-size: 0.9rem;
+    color: var(--dark-grey);
+}
+
+    .remember-me input {
+        position: absolute;
+        opacity: 0;
+        cursor: pointer;
+    }
+
+.checkmark {
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    background-color: white;
+    border: 1px solid var(--medium-grey);
+    border-radius: 3px;
+    margin-right: 0.5rem;
+    position: relative;
+}
+
+.remember-me input:checked ~ .checkmark {
+    background-color: var(--primary-brown);
+    border-color: var(--primary-brown);
+}
+
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+    left: 6px;
+    top: 2px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
+
+.remember-me input:checked ~ .checkmark:after {
+    display: block;
+}
+
+.forgot-password {
+    font-size: 0.9rem;
+    color: var(--primary-brown);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+    .forgot-password:hover {
+        color: var(--dark-brown);
+    }
+
+/* Login Button */
+.login-button {
+    background-color: var(--primary-brown);
+    color: white;
+    border: none;
+    padding: 0.8rem;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-bottom: 1.5rem;
+}
+
+    .login-button:hover {
+        background-color: var(--dark-brown);
+        transform: translateY(-2px);
+    }
+
+/* Signup Link */
+.signup-link {
+    text-align: center;
+    font-size: 0.9rem;
+    color: var(--dark-grey);
+}
+
+    .signup-link a {
+        color: var(--primary-brown);
+        text-decoration: none;
+        font-weight: 600;
+        transition: color 0.3s ease;
+    }
+
+        .signup-link a:hover {
+            color: var(--dark-brown);
+        }
+
+/* Animations */
+.animate-form {
+    animation: fadeInRight 0.8s ease-out;
+}
+
+@keyframes fadeInRight {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .login-container {
+        flex-direction: column;
+    }
+
+    .login-background {
+        display: none;
+    }
+
+    .login-form {
+        max-width: 100%;
+        height: 100vh;
+        padding: 2rem;
+        box-shadow: none;
+    }
+}
+
+@media (max-width: 480px) {
+    .login-form {
+        padding: 1.5rem;
+    }
+
+    .form-title {
+        font-size: 1.5rem;
+    }
+}
